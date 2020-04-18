@@ -8,6 +8,8 @@ extents = Vector2( 243, 92 )
 [node name="Barrier" type="StaticBody2D"]
 position = Vector2( -296, -96 )
 rotation = 1.5708
+collision_layer = 2
+collision_mask = 28
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 101 )

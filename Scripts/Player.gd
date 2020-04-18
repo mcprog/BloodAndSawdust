@@ -6,10 +6,12 @@ const Gravity = 8
 
 export(float) var speed = 85
 export(float) var jump = -230
+export(int) var health = 10
 
 var can_jump = false
 var did_jump = false
 
+onready var health_value = $HUD/MarginContainer/HBoxContainer/HealthValue
 
 func _process(delta):
 	motion.x = 0
@@ -35,11 +37,19 @@ func _process(delta):
 		did_jump = true
 
 		
+func die():
+	queue_free()
+
+func take_damage():
+	health -= 1
+	$AnimationPlayer.play("Hurt")
+	if health <= 0:
+		die()
+	else:
+		health_value.text = str(health)
 
 func _physics_process(delta):
 	motion.y += Gravity
-	
-
 	
 	
 	
