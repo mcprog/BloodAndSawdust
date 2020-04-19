@@ -75,6 +75,7 @@ func add_blood():
 	blood_value.text = str(blood)
 		
 func die():
+	get_parent().player_died()
 	queue_free()
 
 func take_damage(amt = 1):

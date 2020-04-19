@@ -25,6 +25,9 @@ var drink_timer
 var rotation_timer
 var go_close
 
+var latest_enemy = null
+var enemies_in_range = 0
+
 func _ready():
 	randomize()
 	player = get_parent()
@@ -79,15 +82,14 @@ func get_angry():
 	$AngrySound.play()
 	state = States.Angry
 	print("angry")
+	attack_player()
+	
+	
+func attack_player():
 	var instance = Splinter.instance()
 	instance.global_position = $MonsterOrigin/MonsterBody.global_position
-	#$MonsterOrigin/MonsterBody/RayCast2D.look_at(player.global_position)
-	#instance.global_rotation = $MonsterOrigin/MonsterBody/RayCast2D.rotation
 	instance.look_at(player.global_position)
 	player.owner.add_child(instance)
-	
-	
-		
 
 func _process(delta):
 	if state == States.Patrolling:
@@ -97,3 +99,18 @@ func _process(delta):
 	elif state == States.Angry:
 		pass
 		
+
+
+
+
+func _on_Scanner_area_entered(area):
+	enemies_in_range += 1;
+	latest_enemy = area
+	if state == States.Patrolling:
+		state = States.AttackingEnemy
+
+
+func _on_Scanner_area_exited(area):
+	enemies_in_range -= 1;
+	if enemies_in_range == 0:
+		state = States.Patrolling

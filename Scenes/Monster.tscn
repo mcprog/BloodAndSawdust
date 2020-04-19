@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/vinette.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/monster.png" type="Texture" id=2]
@@ -9,6 +9,9 @@
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.0208
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 130.0
 
 [node name="Monster" type="Node2D"]
 script = ExtResource( 3 )
@@ -34,6 +37,12 @@ shape = SubResource( 1 )
 [node name="RayCast2D" type="RayCast2D" parent="MonsterOrigin/MonsterBody"]
 cast_to = Vector2( 30, 0 )
 
+[node name="Scanner" type="Area2D" parent="MonsterOrigin/MonsterBody"]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MonsterOrigin/MonsterBody/Scanner"]
+shape = SubResource( 2 )
+
 [node name="EatSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 
@@ -42,3 +51,5 @@ stream = ExtResource( 5 )
 
 [node name="AngrySound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+[connection signal="area_entered" from="MonsterOrigin/MonsterBody/Scanner" to="." method="_on_Scanner_area_entered"]
+[connection signal="area_exited" from="MonsterOrigin/MonsterBody/Scanner" to="." method="_on_Scanner_area_exited"]
