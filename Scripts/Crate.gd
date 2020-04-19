@@ -6,6 +6,7 @@ extends StaticBody2D
 # var b = "text"
 const SawTime = 2
 
+
 var saw_timer = -1;
 
 func start_sawing():
@@ -20,6 +21,10 @@ func die():
 	$AnimationPlayer.play("Break")
 
 func destroy():
+	var instance = $Sawdust.duplicate()
+	instance.visible = true
+	instance.global_position = $Sawdust.global_position
+	owner.add_child(instance)
 	queue_free()
 
 func _process(delta):

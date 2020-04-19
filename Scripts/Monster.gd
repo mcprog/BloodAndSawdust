@@ -92,6 +92,7 @@ func get_angry():
 func _process(delta):
 	if state == States.Patrolling:
 		eat(delta);
+		drink(delta);
 		patrol(delta);
 	elif state == States.Angry:
 		pass

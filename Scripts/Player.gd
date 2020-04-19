@@ -64,6 +64,15 @@ func drink() -> bool:
 	blood_value.text = str(blood)
 	return true
 
+func add_sawdust():
+	$PickupSound.play()
+	sawdust += 1;
+	sawdust_value.text = str(sawdust)
+
+func add_blood():
+	$PickupSound.play()
+	blood += 1
+	blood_value.text = str(blood)
 		
 func die():
 	queue_free()
@@ -71,8 +80,8 @@ func die():
 func take_damage(amt = 1):
 	health -= amt
 	$AnimationPlayer.play("Hurt")
-	blood += 1
-	blood_value.text = str(blood)
+	add_blood()
+	$HurtSound.play()
 	if health <= 0:
 		die()
 	else:
