@@ -5,7 +5,7 @@ extends Area2D
 # var a = 2
 # var b = "text"
 
-const Speed = 75
+const Speed = 95
 
 
 var direction = Vector2(1, 0)

@@ -44,16 +44,20 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 	if not visible:
 		return;
-	if body.is_in_group("enemy"):
-		print("hit enemy")
-	elif body.is_in_group("wood"):
+	
+	if body.is_in_group("wood"):
 		body.start_sawing()
 
 
 func _on_Area2D_body_exited(body):
 	if not visible:
 		return;
-	if body.is_in_group("enemy"):
-		print("hit enemy")
-	elif body.is_in_group("wood"):
+	if body.is_in_group("wood"):
 		body.stop_sawing()
+
+
+func _on_Area2D_area_entered(area):
+	if not visible:
+		return;
+	if area.is_in_group("enemy"):
+		area.die()

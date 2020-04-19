@@ -8,9 +8,11 @@ radius = 100.0
 
 [sub_resource type="CircleShape2D" id=2]
 
-[node name="Alien" type="Area2D"]
+[node name="Alien" type="Area2D" groups=[
+"enemy",
+]]
 collision_layer = 8
-collision_mask = 4
+collision_mask = 32
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

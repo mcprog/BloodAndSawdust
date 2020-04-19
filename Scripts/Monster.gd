@@ -32,6 +32,7 @@ func _ready():
 	randomize()
 	player = get_parent()
 	state = States.Patrolling;
+	$AnimationPlayer.play("Pulse")
 	drink_timer = DrinkBreak
 	eat_timer = EatBreak
 	rotation_timer = RotateTime

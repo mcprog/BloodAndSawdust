@@ -11,7 +11,7 @@ const Offset = 10
 const Speed = 30
 const MinHeight = 60
 const MaxHeight = 200
-const ShootCooldown = 2.15
+const ShootCooldown = .9
 
 var patrol_down = true
 var shoot_timer
@@ -27,6 +27,7 @@ func shoot():
 	instance.position = position
 	instance.look_at(player.position)
 	owner.add_child(instance)
+	
 
 func _process(delta):
 	var desired_y = position.y
@@ -50,6 +51,9 @@ func _process(delta):
 				desired_y = MaxHeight
 	position.y = move_toward(position.y, desired_y, Speed * delta)
 
+func die():
+	print("alien dieing")
+	queue_free()
 
 func _on_Scanner_body_entered(body):
 	if not body.is_in_group("player"):
@@ -62,3 +66,7 @@ func _on_Scanner_body_exited(body):
 	if not body.is_in_group("player"):
 		return;
 	player = null
+
+
+
+
