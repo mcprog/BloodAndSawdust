@@ -35,6 +35,11 @@ func _process(delta):
 	if Input.is_action_pressed("jump") and can_jump and not did_jump:
 		motion.y = jump
 		did_jump = true
+	
+	if Input.is_action_pressed("attack"):
+		$Saw.show()
+	else:
+		$Saw.hide()
 
 		
 func die():
