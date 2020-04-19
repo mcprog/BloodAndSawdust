@@ -46,9 +46,12 @@ cast_to = Vector2( 50, 0 )
 
 [node name="SawOrigin" type="Node2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="SawOrigin"]
+[node name="Area2D" type="Area2D" parent="SawOrigin" groups=[
+"saw",
+]]
 position = Vector2( 10, 0 )
 scale = Vector2( 0.5, 0.5 )
+collision_layer = 32
 
 [node name="Sprite" type="Sprite" parent="SawOrigin/Area2D"]
 rotation = 0.785398
@@ -64,3 +67,4 @@ anims/Saw = SubResource( 2 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 [connection signal="body_entered" from="SawOrigin/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="SawOrigin/Area2D" to="." method="_on_Area2D_body_exited"]

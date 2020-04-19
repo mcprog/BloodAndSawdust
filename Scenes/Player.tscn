@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/player.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Saw.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/intensa_normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Fonts/intensa_large.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Scenes/Monster.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.0
@@ -29,6 +32,9 @@ tracks/0/keys = {
 collision_layer = 4
 collision_mask = 19
 script = ExtResource( 2 )
+sawdust = 0
+
+[node name="Monster" parent="." instance=ExtResource( 6 )]
 
 [node name="Saw" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
@@ -56,24 +62,89 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer"]
+[node name="Stats" type="HBoxContainer" parent="HUD/MarginContainer"]
 margin_left = 30.0
 margin_top = 10.0
 margin_right = 994.0
 margin_bottom = 100.0
+custom_constants/separation = 60
 
-[node name="HealthLabel" type="Label" parent="HUD/MarginContainer/HBoxContainer"]
-margin_top = 38.0
-margin_right = 50.0
-margin_bottom = 52.0
-text = "Health: "
+[node name="Health" type="HBoxContainer" parent="HUD/MarginContainer/Stats"]
+margin_right = 116.0
+margin_bottom = 90.0
+custom_constants/separation = 10
 
-[node name="HealthValue" type="Label" parent="HUD/MarginContainer/HBoxContainer"]
-margin_left = 54.0
-margin_top = 38.0
-margin_right = 70.0
-margin_bottom = 52.0
+[node name="Label" type="Label" parent="HUD/MarginContainer/Stats/Health"]
+margin_top = 28.0
+margin_right = 73.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Health:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="HUD/MarginContainer/Stats/Health"]
+margin_left = 83.0
+margin_top = 19.0
+margin_right = 116.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "10"
+
+[node name="Sawdust" type="HBoxContainer" parent="HUD/MarginContainer/Stats"]
+margin_left = 176.0
+margin_right = 297.0
+margin_bottom = 90.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="HUD/MarginContainer/Stats/Sawdust"]
+margin_top = 28.0
+margin_right = 89.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Sawdust:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="HUD/MarginContainer/Stats/Sawdust"]
+margin_left = 99.0
+margin_top = 19.0
+margin_right = 121.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0"
+
+[node name="Blood" type="HBoxContainer" parent="HUD/MarginContainer/Stats"]
+margin_left = 357.0
+margin_right = 450.0
+margin_bottom = 90.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="HUD/MarginContainer/Stats/Blood"]
+margin_top = 28.0
+margin_right = 61.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Blood:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="HUD/MarginContainer/Stats/Blood"]
+margin_left = 71.0
+margin_top = 19.0
+margin_right = 93.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Hurt = SubResource( 2 )

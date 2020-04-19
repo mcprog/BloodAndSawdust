@@ -7,11 +7,20 @@ const Gravity = 8
 export(float) var speed = 85
 export(float) var jump = -230
 export(int) var health = 10
+export(int) var sawdust = 5;
+export(int) var blood = 2;
 
 var can_jump = false
 var did_jump = false
 
-onready var health_value = $HUD/MarginContainer/HBoxContainer/HealthValue
+onready var health_value = $HUD/MarginContainer/Stats/Health/Value
+onready var sawdust_value = $HUD/MarginContainer/Stats/Sawdust/Value
+onready var blood_value = $HUD/MarginContainer/Stats/Blood/Value
+
+func _ready():
+	health_value.text = str(health)
+	sawdust_value.text = str(sawdust)
+	blood_value.text = str(blood)
 
 func _process(delta):
 	motion.x = 0
@@ -41,13 +50,29 @@ func _process(delta):
 	else:
 		$Saw.hide()
 
+func eat() -> bool:
+	sawdust -= 1
+	if sawdust < 0:
+		return false
+	sawdust_value.text = str(sawdust)
+	return true
+
+func drink() -> bool:
+	blood -= 1
+	if blood < 0:
+		return false
+	blood_value.text = str(blood)
+	return true
+
 		
 func die():
 	queue_free()
 
-func take_damage():
-	health -= 1
+func take_damage(amt = 1):
+	health -= amt
 	$AnimationPlayer.play("Hurt")
+	blood += 1
+	blood_value.text = str(blood)
 	if health <= 0:
 		die()
 	else:
