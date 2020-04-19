@@ -15,7 +15,6 @@ func show():
 	if visible:
 		return;
 	visible = true
-	print("setting rotation")
 	$SawOrigin.rotation = -PI / 2
 	$AnimationPlayer.play("Saw")
 
@@ -28,9 +27,7 @@ func hide():
 func _process(delta):
 	if Input.is_action_pressed("attack"):
 		$RayCast2D.look_at(get_global_mouse_position())
-		print(str($RayCast2D.rotation_degrees))
 		quadrant = cos($RayCast2D.rotation)
-		print(quadrant)
 		if (quadrant > 0):
 			$SawOrigin/Area2D.scale = Vector2(.5, .5)
 		else:

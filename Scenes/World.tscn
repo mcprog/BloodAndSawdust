@@ -1,0 +1,215 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/clay-bricks.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Barrier.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Crate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PlatformBig.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Sawdust.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Blood.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Water.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/background.png" type="Texture" id=10]
+
+[sub_resource type="TileSet" id=1]
+0/name = "clay-bricks.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 24, 24 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "clay-bricks.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 24, 0, 24, 24 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "clay-bricks.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 48, 0, 24, 24 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "clay-bricks.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 72, 0, 24, 24 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "clay-bricks.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 96, 0, 24, 24 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "clay-bricks.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 120, 0, 24, 24 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+
+[node name="World" type="Node2D"]
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 136, -292 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 10 )
+
+[node name="BG2" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 24, 24 )
+cell_quadrant_size = 12
+cell_custom_transform = Transform2D( 24, 0, 0, 24, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -262152, 5, 0, -262150, 4, 0, -131072, 5, 0, -131069, 4, 0, -65525, 4, 0, -65522, 5, 0, 65531, 4, 0, 65533, 5, 0, 4, 4, 0, 6, 5, 0, 17, 4, 0 )
+
+[node name="BG" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 24, 24 )
+cell_quadrant_size = 12
+cell_custom_transform = Transform2D( 24, 0, 0, 24, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -458746, 2, 0, -458745, 1, 0, -458744, 1, 0, -458743, 1, 0, -458742, 1, 0, -458741, 3, 0, -327688, 2, 0, -327687, 1, 0, -327686, 3, 0, -393210, 5, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -393206, 0, 0, -393205, 4, 0, -262153, 1, 0, -262152, 1, 0, -262151, 0, 0, -262150, 1, 0, -262149, 3, 0, -327674, 5, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 4, 0, -327666, 2, 0, -327665, 1, 0, -327664, 1, 0, -327663, 3, 0, -196617, 0, 0, -196616, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 4, 0, -262138, 5, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 4, 0, -262130, 5, 0, -262129, 0, 0, -262128, 0, 0, -262127, 4, 0, -131081, 0, 0, -131080, 0, 0, -131079, 0, 0, -131078, 0, 0, -131077, 4, 0, -196608, 2, 0, -196607, 1, 0, -196606, 1, 0, -196605, 3, 0, -196602, 5, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 4, 0, -196594, 5, 0, -196593, 0, 0, -196592, 0, 0, -196591, 4, 0, -65545, 0, 0, -65544, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 4, 0, -65539, 2, 0, -65538, 1, 0, -65537, 1, 0, -131072, 1, 0, -131071, 0, 0, -131070, 0, 0, -131069, 1, 0, -131068, 3, 0, -131066, 5, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 4, 0, -131058, 5, 0, -131057, 0, 0, -131056, 0, 0, -131055, 4, 0, -9, 0, 0, -8, 0, 0, -7, 0, 0, -6, 0, 0, -5, 4, 0, -3, 5, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 4, 0, -65530, 5, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 0, 0, -65520, 0, 0, -65519, 4, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 196599, 0, 0, 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 262135, 0, 0, 262136, 0, 0, 262137, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0 )
+
+[node name="Barrier" parent="." instance=ExtResource( 2 )]
+
+[node name="Barrier2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 559, -94 )
+rotation = -1.5708
+
+[node name="Crate" parent="." instance=ExtResource( 3 )]
+position = Vector2( -6, -11 )
+
+[node name="Water" parent="." instance=ExtResource( 8 )]
+position = Vector2( -354, 152 )
+collision_layer = 2
+collision_mask = 28
+
+[node name="Water2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 132, 152 )
+collision_layer = 2
+collision_mask = 28
+
+[node name="Water3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 618, 152 )
+collision_layer = 2
+collision_mask = 28
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="PlatformBig" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( -49, 82 )
+
+[node name="PlatformBig2" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 190, 57 )
+
+[node name="PlatformBig3" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( -140, 56 )
+
+[node name="PlatformBig4" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( -104, -20 )
+
+[node name="PlatformBig5" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 148, -21 )
+
+[node name="PlatformBig6" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 317, 42 )
+
+[node name="PlatformBig7" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 294, -16 )
+
+[node name="PlatformBig8" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 414, -31 )
+
+[node name="PlatformBig9" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 377, 89 )
+
+[node name="Platform" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 71, 77 )
+
+[node name="Platform2" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 96, 28 )
+
+[node name="Platform3" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 120, 112 )
+
+[node name="Platform4" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( -56, 41 )
+
+[node name="Platform5" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 4, 3 )
+
+[node name="Platform6" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( -113, -66 )
+
+[node name="Platform7" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 106, -56 )
+
+[node name="Platform8" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 332, -68 )
+
+[node name="Platform9" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 267, 103 )
+
+[node name="Platform10" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( -101, 126 )
+
+[node name="Platform11" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 429, 119 )
+
+[node name="Sawdust" parent="." instance=ExtResource( 6 )]
+position = Vector2( -54, 29 )
+
+[node name="Blood" parent="." instance=ExtResource( 7 )]
+position = Vector2( -136, -87 )
+
+[node name="Blood2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -54, -78 )

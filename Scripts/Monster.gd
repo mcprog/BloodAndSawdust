@@ -6,7 +6,7 @@ enum States {
 }
 
 const EatBreak = 5
-const DrinkBreak = 8
+const DrinkBreak = 3
 
 const ClosePlayer = 35
 const FarPlayer = 100
@@ -82,15 +82,15 @@ func patrol(delta):
 func get_angry():
 	$AngrySound.play()
 	state = States.Angry
-	print("angry")
-	attack_player()
+	$AnimationPlayer.play("ChargeUp")
 	
 	
 func attack_player():
 	var instance = Splinter.instance()
 	instance.global_position = $MonsterOrigin/MonsterBody.global_position
-	instance.look_at(player.global_position)
+	instance.set_up(player)
 	player.owner.add_child(instance)
+	state = States.Patrolling
 
 func _process(delta):
 	if state == States.Patrolling:
@@ -107,8 +107,8 @@ func _process(delta):
 func _on_Scanner_area_entered(area):
 	enemies_in_range += 1;
 	latest_enemy = area
-	if state == States.Patrolling:
-		state = States.AttackingEnemy
+#	if state == States.Patrolling:
+#		state = States.AttackingEnemy
 
 
 func _on_Scanner_area_exited(area):

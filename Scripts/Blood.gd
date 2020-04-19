@@ -13,12 +13,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotation = 0
+	angular_velocity = 0
 
 func die():
 	queue_free()
 
 func _on_Blood_body_entered(body):
+	if body.is_in_group("player"):
+		body.add_blood()
+		die()
+
+
+func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		body.add_blood()
 		die()

@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/intensa_normal.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Sprites/wood_plank.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/wood_plank_hover.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/wood_plank_pressed.png" type="Texture" id=4]
 
 [node name="Start" type="TextureButton"]
 margin_right = 200.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 200, 100 )
 texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
 expand = true
 stretch_mode = 4
 __meta__ = {
