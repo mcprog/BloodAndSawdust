@@ -13,7 +13,7 @@ radius = 24.0208
 [sub_resource type="CircleShape2D" id=2]
 radius = 130.0
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "ChargeUp"
 tracks/0/type = "value"
 tracks/0/path = NodePath("MonsterOrigin/MonsterBody/Shadow:scale")
@@ -66,8 +66,7 @@ tracks/3/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Pulse"
+[sub_resource type="Animation" id=4]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -107,7 +106,7 @@ cast_to = Vector2( 50, 0 )
 position = Vector2( 60, 0 )
 
 [node name="Shadow" type="Sprite" parent="MonsterOrigin/MonsterBody"]
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="MonsterOrigin/MonsterBody"]
@@ -135,7 +134,7 @@ stream = ExtResource( 5 )
 stream = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ChargeUp = SubResource( 4 )
-anims/Pulse = SubResource( 3 )
+anims/ChargeUp = SubResource( 3 )
+anims/Pulse = SubResource( 4 )
 [connection signal="area_entered" from="MonsterOrigin/MonsterBody/Scanner" to="." method="_on_Scanner_area_entered"]
 [connection signal="area_exited" from="MonsterOrigin/MonsterBody/Scanner" to="." method="_on_Scanner_area_exited"]

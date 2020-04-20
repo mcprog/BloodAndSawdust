@@ -4,7 +4,7 @@ extends StaticBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-const SawTime = 1.2
+const SawTime = .5
 
 
 var saw_timer = -1;

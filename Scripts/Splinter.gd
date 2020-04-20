@@ -30,6 +30,7 @@ func _on_Splinter_body_exited(body):
 	if body.is_in_group("player"):
 		print("splintered player")
 		body.take_damage(2)
+		body.add_blood()
 		die()
 		
 

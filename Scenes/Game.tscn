@@ -46,10 +46,10 @@ position = Vector2( 17, -278 )
 position = Vector2( -104, -434 )
 
 [node name="Alien8" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( -166, -456 )
+position = Vector2( 307, -41 )
 
 [node name="Alien9" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 333, -497 )
+position = Vector2( 379, -294 )
 
 [node name="Snake" parent="." instance=ExtResource( 3 )]
 position = Vector2( -50, 69 )
@@ -58,4 +58,4 @@ position = Vector2( -50, 69 )
 script = ExtResource( 4 )
 
 [node name="Key" parent="." instance=ExtResource( 5 )]
-position = Vector2( -114, 114 )
+position = Vector2( 245, -276 )

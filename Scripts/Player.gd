@@ -52,6 +52,7 @@ func _process(delta):
 	else:
 		$Saw.hide()
 
+
 func add_key():
 	$PickupSound.play()
 	has_key = true;
@@ -73,6 +74,12 @@ func drink() -> bool:
 	blood_value.text = str(blood)
 	return true
 
+func has_sawdust() -> bool:
+	return sawdust > 0;
+
+func has_blood() -> bool:
+	return blood > 0;
+
 func add_sawdust():
 	$PickupSound.play()
 	sawdust += 1;
@@ -90,7 +97,6 @@ func die():
 func take_damage(amt = 1):
 	health -= amt
 	$AnimationPlayer.play("Hurt")
-	add_blood()
 	$HurtSound.play()
 	if health <= 0:
 		die()

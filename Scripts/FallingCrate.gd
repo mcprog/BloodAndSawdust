@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 
-const SawTime = 1.2
+const SawTime = .5
 
 # falling crate.gd
 

@@ -80,17 +80,23 @@ func patrol(delta):
 			$MonsterOrigin/MonsterBody.position = lerp($MonsterOrigin/MonsterBody.position, goal, delta * MoveSpeed)
 	
 func get_angry():
+	if player.has_sawdust() and player.has_blood():
+		state = States.Patrolling
+		return;
 	$AngrySound.play()
 	state = States.Angry
 	$AnimationPlayer.play("ChargeUp")
 	
 	
 func attack_player():
+	if player.has_sawdust() and player.has_blood():
+		state = States.Patrolling
+		return;
 	var instance = Splinter.instance()
 	instance.global_position = $MonsterOrigin/MonsterBody.global_position
 	instance.set_up(player)
 	player.owner.add_child(instance)
-	state = States.Patrolling
+	get_angry()
 
 func _process(delta):
 	if state == States.Patrolling:
