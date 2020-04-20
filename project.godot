@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="BloodAndSawdust"
 run/main_scene="res://Scenes/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Sprites/icon.png"
+config/windows_native_icon="res://bloodandsawdust.ico"
 
 [display]
 
