@@ -12,10 +12,12 @@ export(int) var blood = 2;
 
 var can_jump = false
 var did_jump = false
+var has_key = false
 
 onready var health_value = $HUD/MarginContainer/Stats/Health/Value
 onready var sawdust_value = $HUD/MarginContainer/Stats/Sawdust/Value
 onready var blood_value = $HUD/MarginContainer/Stats/Blood/Value
+onready var key = $HUD/MarginContainer/Stats/Key
 
 func _ready():
 	health_value.text = str(health)
@@ -50,9 +52,15 @@ func _process(delta):
 	else:
 		$Saw.hide()
 
+func add_key():
+	$PickupSound.play()
+	has_key = true;
+	key.visible = true
+
 func eat() -> bool:
 	sawdust -= 1
 	if sawdust < 0:
+		sawdust = 0
 		return false
 	sawdust_value.text = str(sawdust)
 	return true
@@ -60,6 +68,7 @@ func eat() -> bool:
 func drink() -> bool:
 	blood -= 1
 	if blood < 0:
+		blood = 0
 		return false
 	blood_value.text = str(blood)
 	return true

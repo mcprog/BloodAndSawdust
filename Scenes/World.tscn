@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/clay-bricks.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Barrier.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Crate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/PlatformBig.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Sawdust.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Blood.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Water.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sprites/background.png" type="Texture" id=10]
 
@@ -99,8 +97,7 @@
 [node name="World" type="Node2D"]
 
 [node name="Sky" type="Sprite" parent="."]
-position = Vector2( 136, -292 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 141, -171 )
 texture = ExtResource( 10 )
 
 [node name="BG2" type="TileMap" parent="."]
@@ -125,8 +122,31 @@ tile_data = PoolIntArray( -458746, 2, 0, -458745, 1, 0, -458744, 1, 0, -458743, 
 position = Vector2( 559, -94 )
 rotation = -1.5708
 
-[node name="Crate" parent="." instance=ExtResource( 3 )]
+[node name="Crates" type="Node2D" parent="."]
+
+[node name="Crate" parent="Crates" instance=ExtResource( 3 )]
 position = Vector2( -6, -11 )
+
+[node name="Crate2" parent="Crates" instance=ExtResource( 3 )]
+position = Vector2( -97, -34 )
+
+[node name="Crate3" parent="Crates" instance=ExtResource( 3 )]
+position = Vector2( -97, -80 )
+
+[node name="Crate4" parent="Crates" instance=ExtResource( 3 )]
+position = Vector2( -172, -109 )
+
+[node name="Crate5" parent="Crates" instance=ExtResource( 3 )]
+position = Vector2( -163, 42 )
+
+[node name="Crate6" parent="Crates" instance=ExtResource( 3 )]
+position = Vector2( 299, 28 )
+
+[node name="Crate7" parent="Crates" instance=ExtResource( 3 )]
+position = Vector2( 318, 28 )
+
+[node name="Crate8" parent="Crates" instance=ExtResource( 3 )]
+position = Vector2( 421, -45 )
 
 [node name="Water" parent="." instance=ExtResource( 8 )]
 position = Vector2( -354, 152 )
@@ -172,6 +192,42 @@ position = Vector2( 414, -31 )
 [node name="PlatformBig9" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( 377, 89 )
 
+[node name="PlatformBig10" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 408, -77 )
+
+[node name="PlatformBig11" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 285, -113 )
+
+[node name="PlatformBig12" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 165, -121 )
+
+[node name="PlatformBig13" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 60, -107 )
+
+[node name="PlatformBig14" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( -58, -105 )
+
+[node name="PlatformBig15" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( -169, -95 )
+
+[node name="PlatformBig16" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( -13, -214 )
+
+[node name="PlatformBig17" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 103, -216 )
+
+[node name="PlatformBig18" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 219, -218 )
+
+[node name="PlatformBig19" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 315, -192 )
+
+[node name="PlatformBig20" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 172, -258 )
+
+[node name="PlatformBig21" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 261, -264 )
+
 [node name="Platform" parent="Platforms" instance=ExtResource( 5 )]
 position = Vector2( 71, 77 )
 
@@ -205,11 +261,29 @@ position = Vector2( -101, 126 )
 [node name="Platform11" parent="Platforms" instance=ExtResource( 5 )]
 position = Vector2( 429, 119 )
 
-[node name="Sawdust" parent="." instance=ExtResource( 6 )]
-position = Vector2( -54, 29 )
+[node name="Platform12" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 370, 14 )
 
-[node name="Blood" parent="." instance=ExtResource( 7 )]
-position = Vector2( -136, -87 )
+[node name="Platform13" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 437, -123 )
 
-[node name="Blood2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -54, -78 )
+[node name="Platform14" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 370, -153 )
+
+[node name="Platform15" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 224, -81 )
+
+[node name="Platform16" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 140, -169 )
+
+[node name="Platform17" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 11, -149 )
+
+[node name="Platform18" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( -90, -144 )
+
+[node name="Platform19" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( -168, -162 )
+
+[node name="Platform20" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( -104, -187 )
