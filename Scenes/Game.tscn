@@ -20,6 +20,7 @@ zoom = Vector2( 0.6, 0.6 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 54, 34 )
+sawdust = 2
 
 [node name="Enemies" type="Node2D" parent="."]
 

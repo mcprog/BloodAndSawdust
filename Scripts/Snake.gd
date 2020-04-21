@@ -41,7 +41,7 @@ func try_attack():
 		target.take_damage()
 
 func die():
-	destroy()
+	$AnimationPlayer.play("Die")
 
 func destroy():
 	var instance = Blood.instance()

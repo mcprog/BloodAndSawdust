@@ -96,6 +96,7 @@ func attack_player():
 	instance.global_position = $MonsterOrigin/MonsterBody.global_position
 	instance.set_up(player)
 	player.owner.add_child(instance)
+	player.freeze()
 	get_angry()
 
 func _process(delta):

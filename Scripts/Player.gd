@@ -13,6 +13,7 @@ export(int) var blood = 2;
 var can_jump = false
 var did_jump = false
 var has_key = false
+var frozen = false;
 
 onready var health_value = $HUD/MarginContainer/Stats/Health/Value
 onready var sawdust_value = $HUD/MarginContainer/Stats/Sawdust/Value
@@ -26,6 +27,8 @@ func _ready():
 
 func _process(delta):
 	motion.x = 0
+	if frozen:
+		return
 	if Input.is_action_pressed("right"):
 		motion.x = speed
 	elif Input.is_action_pressed("left"):
@@ -74,6 +77,9 @@ func drink() -> bool:
 	blood_value.text = str(blood)
 	return true
 
+func freeze():
+	frozen = true;
+
 func has_sawdust() -> bool:
 	return sawdust > 0;
 
@@ -96,6 +102,7 @@ func die():
 
 func take_damage(amt = 1):
 	health -= amt
+	frozen = false
 	$AnimationPlayer.play("Hurt")
 	$HurtSound.play()
 	if health <= 0:
