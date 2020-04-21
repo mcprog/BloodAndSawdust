@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 11 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Hide"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:modulate")
@@ -24,8 +24,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Show"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:modulate")
 tracks/0/interp = 1
@@ -95,8 +94,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Hide = SubResource( 3 )
-anims/Show = SubResource( 2 )
+anims/Hide = SubResource( 2 )
+anims/Show = SubResource( 3 )
 anims/Transition = SubResource( 4 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

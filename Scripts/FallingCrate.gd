@@ -27,8 +27,7 @@ func destroy():
 	var instance = $Sawdust.duplicate()
 	instance.visible = true
 	instance.global_position = $Sawdust.global_position
-	if owner:
-		owner.add_child(instance)
+	get_parent().add_child(instance)
 	queue_free()
 
 func _process(delta):
@@ -43,7 +42,6 @@ func _process(delta):
 	if not frozen and abs(linear_velocity.y) < Epsilon:
 		frozen = true;
 		mode = RigidBody2D.MODE_STATIC
-		print("mode is static")
 		
 
 

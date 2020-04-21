@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 
+const Key = preload("res://Scenes/Key.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -11,20 +12,21 @@ var saw_timer = -1;
 
 func start_sawing():
 	saw_timer = 0
-	$AnimationPlayer.play("Breaking")
+	#$AnimationPlayer.play("Breaking")
 
 func stop_sawing():
 	saw_timer = -1
-	$AnimationPlayer.stop()
+	#$AnimationPlayer.stop()
 
 func die():
-	$AnimationPlayer.play("Break")
+	destroy()
+	#$AnimationPlayer.play("Break")
 
 func destroy():
-	var instance = $Sawdust.duplicate()
-	instance.visible = true
-	instance.global_position = $Sawdust.global_position
-	get_parent().add_child(instance)
+	var instance = Key.instance()
+
+	instance.global_position = global_position
+	owner.add_child(instance)
 	queue_free()
 
 func _process(delta):

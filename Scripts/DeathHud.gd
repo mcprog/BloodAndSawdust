@@ -10,4 +10,4 @@ func _on_Retry_pressed():
 
 
 func _on_Quit_pressed():
-	get_tree().quit()
+	get_tree().change_scene("res://Scenes/MainMenu2.tscn")

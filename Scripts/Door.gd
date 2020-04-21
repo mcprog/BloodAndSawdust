@@ -20,7 +20,7 @@ func _process(delta):
 		$AnimationPlayer.play("Transition")
 		
 func change_scene():
-	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene("res://Scenes/EndScreen.tscn")
 
 func _on_Door_body_entered(body):
 	if not body.is_in_group("player"):

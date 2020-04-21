@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/CustomButton.tscn" type="PackedScene" id=2]
+
+[node name="MainMenu" instance=ExtResource( 1 )]
+
+[node name="CenterContainer" parent="MarginContainer/VBoxContainer" index="1"]
+margin_bottom = 493.0
+
+[node name="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer" index="0"]
+margin_bottom = 412.0
+
+[node name="Help" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" index="1" instance=ExtResource( 2 )]
+margin_top = 104.0
+margin_bottom = 204.0
+
+[node name="Label" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Help" index="0"]
+text = "Help"
+
+[node name="Credits" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" index="2" instance=ExtResource( 2 )]
+margin_top = 208.0
+margin_bottom = 308.0
+
+[node name="Label" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Credits" index="0"]
+margin_left = -36.0
+margin_right = 36.0
+margin_bottom = 16.5
+text = "Credits"
+
+[node name="Quit" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" index="3"]
+margin_top = 312.0
+margin_bottom = 412.0
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Help" to="." method="_on_Help_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+
+[editable path="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Help"]
+
+[editable path="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Credits"]

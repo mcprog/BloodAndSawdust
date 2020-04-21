@@ -1,7 +1,9 @@
 extends Node2D
 
-const AlienCool = 5;
+const AlienCool = 9;
 const CrateCool = 9;
+const MaxCrates = 10;
+const MaxAliens = 7;
 const MinX = -190;
 const MaxX = 450;
 const StartY = -400;
@@ -18,14 +20,22 @@ func _ready():
 	randomize()
 
 func spawn_crate():
+	if $Crates.get_child_count() > MaxCrates:
+		print("too many crates, aborting!")
+		return;
 	var instance = Crate.instance()
 	var rand_x = rand_range(MinX, MaxX)
 	instance.position = Vector2(rand_x, StartY)
-	add_child(instance)
-	print("spawned child of spawner (crate)")
+	$Crates.add_child(instance)
 
 func spawn_alien():
-	pass
+	if $Aliens.get_child_count() > MaxAliens:
+		print("too many aliens, aborting!")
+		return;
+	var instance = Alien.instance()
+	var rand_x = rand_range(MinX, MaxX)
+	instance.position = Vector2(rand_x, StartY)
+	$Aliens.add_child(instance)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	crate_timer -= delta

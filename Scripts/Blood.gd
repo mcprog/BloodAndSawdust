@@ -21,10 +21,12 @@ func die():
 func _on_Blood_body_entered(body):
 	if body.is_in_group("player"):
 		body.add_blood()
+		body.add_blood()
 		die()
 
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
+		body.add_blood()
 		body.add_blood()
 		die()

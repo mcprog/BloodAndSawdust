@@ -62,7 +62,7 @@ margin_right = 462.0
 margin_left = -79.0
 margin_right = 79.0
 margin_bottom = 28.25
-text = "Quit to Desktop"
+text = "Main Menu"
 [connection signal="pressed" from="MarginContainer/VBox/CenterContainer/Retry" to="." method="_on_Retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]
 

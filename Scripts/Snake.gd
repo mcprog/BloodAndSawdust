@@ -6,6 +6,8 @@ var direction = 1
 
 const Speed = 20
 
+const Blood = preload("res://Scenes/Blood.tscn")
+
 var motion = Vector2()
 
 var target = null
@@ -39,12 +41,19 @@ func try_attack():
 		target.take_damage()
 
 func die():
+	destroy()
+
+func destroy():
+	var instance = Blood.instance()
+	instance.position = position
+	if owner:
+		owner.add_child(instance);
+	else:
+		get_parent().add_child(instance)
 	queue_free()
 
 func _on_RightTrigger_body_exited(body):
 	direction = -1
-
-
 
 func _on_AttackTrigger_body_exited(body):
 	target_exited = true

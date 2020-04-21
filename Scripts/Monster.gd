@@ -5,7 +5,7 @@ enum States {
 	Patrolling, Angry, AttackingPlayer, AttackingEnemy
 }
 
-const EatBreak = 5
+const EatBreak = 7
 const DrinkBreak = 3
 
 const ClosePlayer = 35
@@ -100,8 +100,9 @@ func attack_player():
 
 func _process(delta):
 	if state == States.Patrolling:
-		eat(delta);
-		drink(delta);
+		if player.is_in_group("player"):
+			eat(delta);
+			drink(delta);
 		patrol(delta);
 	elif state == States.Angry:
 		pass

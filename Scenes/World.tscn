@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/clay-bricks.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Barrier.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/PlatformBig.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Chest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Water.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sprites/background.png" type="Texture" id=10]
 
@@ -137,6 +138,12 @@ position = Vector2( -97, -80 )
 [node name="Crate4" parent="Crates" instance=ExtResource( 3 )]
 position = Vector2( -172, -109 )
 
+[node name="Crate9" parent="Crates" instance=ExtResource( 3 )]
+position = Vector2( 152, -135 )
+
+[node name="Crate10" parent="Crates" instance=ExtResource( 3 )]
+position = Vector2( 273, -127 )
+
 [node name="Crate5" parent="Crates" instance=ExtResource( 3 )]
 position = Vector2( -163, 42 )
 
@@ -151,6 +158,9 @@ position = Vector2( 421, -45 )
 
 [node name="Door" parent="." instance=ExtResource( 6 )]
 position = Vector2( 440, 132 )
+
+[node name="Chest" parent="." instance=ExtResource( 7 )]
+position = Vector2( 265, -284 )
 
 [node name="Water" parent="." instance=ExtResource( 8 )]
 position = Vector2( -354, 152 )
@@ -201,6 +211,12 @@ position = Vector2( 408, -77 )
 
 [node name="PlatformBig11" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( 285, -113 )
+
+[node name="PlatformBig22" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 258, -154 )
+
+[node name="PlatformBig23" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 377, -223 )
 
 [node name="PlatformBig12" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( 165, -121 )
@@ -273,6 +289,9 @@ position = Vector2( 437, -123 )
 
 [node name="Platform14" parent="Platforms" instance=ExtResource( 5 )]
 position = Vector2( 370, -153 )
+
+[node name="Platform21" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 367, -258 )
 
 [node name="Platform15" parent="Platforms" instance=ExtResource( 5 )]
 position = Vector2( 224, -81 )
